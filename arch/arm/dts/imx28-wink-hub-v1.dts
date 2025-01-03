@@ -30,18 +30,21 @@
 		led-red {
 			label = "red";
 			max-brightness = <255>;
+			/* default-brightness = <127>; */
 			pwms = <&pwm 0 500000>;
 		};
 
 		led-green {
 			label = "green";
 			max-brightness = <255>;
+			/* default-brightness = <127>; */
 			pwms = <&pwm 1 500000>;
 		};
 
 		led-blue {
 			label = "blue";
 			max-brightness = <255>;
+			/* default-brightness = <127>; */
 			pwms = <&pwm 3 500000>;
 		};
 	};
