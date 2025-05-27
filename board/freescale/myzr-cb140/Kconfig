@@ -1,0 +1,15 @@
+if TARGET_MYZR_CB140
+
+config SYS_BOARD
+	default "myzr-cb140"
+
+config SYS_VENDOR
+	default "freescale"
+
+config SYS_CONFIG_NAME
+	default "myzr-cb140"
+
+config IMX_CONFIG
+	default "board/freescale/myzr-cb140/imximage.cfg"
+
+endif

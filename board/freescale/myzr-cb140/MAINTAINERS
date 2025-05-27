@@ -1,0 +1,6 @@
+MYZR-CB140 SOM
+M:	Rogan Dawes <rogan@dawes.za.net>
+S:	Unmaintained
+F:	board/freescale/myzr-cb140/
+F:	include/configs/myzr-cb140.h
+F:	configs/myzr_cb140_defconfig
