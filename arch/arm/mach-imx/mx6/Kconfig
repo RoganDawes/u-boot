@@ -466,11 +466,13 @@ config TARGET_MX6UL_ENGICAM
 config TARGET_MYZR_CB140
 	bool "Support MYZR CB140"
 	depends on MX6ULL
-	select BOARD_LATE_INIT
-	select DM
-	select DM_THERMAL
-	select IOMUX_LPSR
-	imply CMD_DM
+        select DM
+        select DM_GPIO
+        select DM_I2C
+        select DM_SERIAL
+        select DM_MTD
+        select DM_THERMAL
+        select SUPPORT_SPL
 
 config TARGET_MX6ULL_14X14_EVK
 	bool "Support mx6ull_14x14_evk"

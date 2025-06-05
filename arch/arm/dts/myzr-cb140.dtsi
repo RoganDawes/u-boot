@@ -85,7 +85,6 @@
 &gpmi {
         pinctrl-names = "default";
         pinctrl-0 = <&pinctrl_gpmi_nand>;
-//	dmas = <6 0>;
 	reg = <0x1806000 0x2000 0x1808000 0x4000>;
 //        fsl,use-minimum-ecc;
         nand-on-flash-bbt;
