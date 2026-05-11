@@ -746,25 +746,29 @@ static void setup_serial_number(void)
 
 int arch_misc_init(void)
 {
-	if (IS_ENABLED(CONFIG_FSL_CAAM)) {
+	int ret = 1;
+	if (!ret && IS_ENABLED(CONFIG_FSL_CAAM)) {
 		struct udevice *dev;
-		int ret;
 
 		ret = uclass_get_device_by_driver(UCLASS_MISC, DM_DRIVER_GET(caam_jr), &dev);
 		if (ret)
 			printf("Failed to initialize caam_jr: %d\n", ret);
+		else
+			printf("Successfully initialized caam_jr\n");
 	}
 
-	if (IS_ENABLED(CONFIG_FSL_DCP_RNG)) {
+	if (!ret && IS_ENABLED(CONFIG_FSL_DCP_RNG)) {
 		struct udevice *dev;
-		int ret;
 
 		ret = uclass_get_device_by_driver(UCLASS_RNG, DM_DRIVER_GET(dcp_rng), &dev);
 		if (ret)
 			printf("Failed to initialize dcp rng: %d\n", ret);
+		else
+			printf("Successfully initialized dcp rng\n");
 	}
 
-	setup_serial_number();
+	if (!ret)
+		setup_serial_number();
 	return 0;
 }
 #endif
